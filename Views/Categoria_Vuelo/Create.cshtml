@@ -1,0 +1,60 @@
+﻿@model Aerolinea.Models.Categoria_Vuelo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>Categoria de Vuelo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SerieAvion" class="control-label"></label>
+                <input asp-for="SerieAvion" class="form-control" />
+                <span asp-validation-for="SerieAvion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente" class="control-label"></label>
+                <input asp-for="Cliente" class="form-control" />
+                <span asp-validation-for="Cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrada" class="control-label"></label>
+                <input asp-for="Entrada" class="form-control" />
+                <span asp-validation-for="Entrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salida" class="control-label"></label>
+                <input asp-for="Salida" class="form-control" />
+                <span asp-validation-for="Salida" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Categorias" class="col-sm-2 col-form-label"></label>
+                <select asp-for="Categorias" class="custom-select mr-sm-2" asp-items="Html.GetEnumSelectList<Categoria>()">
+                    <option value="">Selecciona una opcion</option>
+                </select>
+                <span asp-validation-for="Categorias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
